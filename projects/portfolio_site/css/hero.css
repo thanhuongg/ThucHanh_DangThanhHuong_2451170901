@@ -1,3 +1,14 @@
+:root {
+    --color-primary: #6366f1;    /* Indigo */
+    --color-secondary: #8b5cf6;  /* Purple */
+    --color-dark: #1e293b;       /* Slate dark */
+    --color-light: #f8fafc;      /* Slate light */
+    --color-text: #334155;       /* Slate text */
+    --font-main: 'Segoe UI', sans-serif;
+}
+*{
+    margin: 0;
+}
 .hero {
     min-height: 100vh;
     display: flex;
@@ -6,12 +17,34 @@
     align-items: center;
     text-align: center;
     background: linear-gradient(#8b44ed, #4e83f0);
-    font-size: 30px;
 }
 .cta-button{
     text-decoration: none;
+    display: inline-block;
+    padding: 25px 50px;
+    background-color: #f8fafc;
+    border-radius: 50px;
+    font-size: 20px;
+    font-family: var(--font-main);
+    
 }
 .cta-button:hover{
     box-shadow: 2px;
     transform: scale(1.1);
+}
+section p{
+    font-size: 25px;
+    font-family: var(--font-main);
+    color: #f8fafc;
+    margin-bottom: 50px;
+}
+section h1{
+    font-size: 80px;
+    color: white;
+    font-family: var(--font-main);
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.name{
+    color: #fabe24;
 }
