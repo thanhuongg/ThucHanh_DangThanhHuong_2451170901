@@ -1,0 +1,17 @@
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(#8b44ed, #4e83f0);
+    font-size: 30px;
+}
+.cta-button{
+    text-decoration: none;
+}
+.cta-button:hover{
+    box-shadow: 2px;
+    transform: scale(1.1);
+}
