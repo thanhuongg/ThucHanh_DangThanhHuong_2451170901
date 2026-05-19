@@ -269,3 +269,78 @@ body::before {
   letter-spacing: 0.08em;
   flex-shrink: 0;
 }
+
+.contact-title {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 7vw, 7rem);
+  font-weight: 300;
+  line-height: 0.95;
+}
+
+.contact-title em {
+  font-style: italic;
+  color: var(--warm-gray);
+}
+
+.contact-sub {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--warm-gray);
+}
+
+.contact-email {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  font-style: italic;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 3px;
+  display: inline-block;
+  transition: color 0.25s;
+}
+
+.contact-email:hover {
+  color: var(--warm-gray);
+}
+
+.social-link {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--warm-gray);
+  text-decoration: none;
+  transition: color 0.2s;
+  position: relative;
+}
+
+.social-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--ink);
+  transition: width 0.3s var(--ease-out);
+}
+
+.social-link:hover {
+  color: var(--ink);
+}
+
+.social-link:hover::after {
+  width: 100%;
+}
+
+footer p {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--warm-gray);
+  opacity: 0.7;
+}
