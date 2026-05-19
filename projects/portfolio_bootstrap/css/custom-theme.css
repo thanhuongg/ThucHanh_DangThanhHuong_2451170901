@@ -1,0 +1,11 @@
+:root {
+  --cream:     #f4f0ea;
+  --ink:       #1a1714;
+  --warm-gray: #9a9189;
+  --accent:    #c8b89a;
+  --pale:      #e8e2d9;
+  --font-display: 'Cormorant Garamond', serif;
+  --font-body:    'EB Garamond', serif;
+  --font-mono:    'Space Mono', monospace;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
