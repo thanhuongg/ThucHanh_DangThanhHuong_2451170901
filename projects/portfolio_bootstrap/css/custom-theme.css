@@ -186,3 +186,86 @@ body::before {
   color: var(--accent);
   margin-top: 0.35rem;
 }
+
+.about-img img {
+  width: 100%;
+  filter: saturate(0.45) contrast(1.12);
+  transition: filter 0.5s;
+}
+
+.about-img:hover img {
+  filter: saturate(0.65) contrast(1.08);
+}
+
+.about-img-frame {
+  position: relative;
+}
+
+.about-img-frame::after {
+  content: '';
+  position: absolute;
+  top: 1.2rem;
+  left: 1.2rem;
+  right: -1.2rem;
+  bottom: -1.2rem;
+  border: 1px solid var(--accent);
+  z-index: -1;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .about-img-frame::after {
+    display: none;
+  }
+}
+
+.about-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 4.5vw, 5rem);
+  font-weight: 300;
+  line-height: 1.02;
+}
+
+.about-title em {
+  font-style: italic;
+  color: var(--warm-gray);
+}
+
+.about-body {
+  font-size: 0.98rem;
+  line-height: 1.9;
+  color: var(--warm-gray);
+}
+
+.exhibitions-list {
+  list-style: none;
+  padding: 0;
+}
+
+.exhibitions-list li {
+  font-family: var(--font-body);
+  font-size: 0.87rem;
+  color: var(--warm-gray);
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--pale);
+  display: flex;
+  gap: 1rem;
+  align-items: baseline;
+  transition: color 0.2s;
+}
+
+.exhibitions-list li:hover {
+  color: var(--ink);
+}
+
+.exhibitions-list li:last-child {
+  border-bottom: none;
+}
+
+.ex-year {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  flex-shrink: 0;
+}
