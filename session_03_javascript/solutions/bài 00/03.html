@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>hello</p>
+
+    <script>
+        let hoTen = "Nguyễn Văn A";     // Dùng dấu ""
+        let diaChi = 'Hà Nội';          // Dùng dấu ''
+        let loiChao = `Xin chào ${hoTen}`; // Dùng backtick (template literal)
+
+        console.log(typeof hoTen);      // "string"
+        console.log(loiChao);           // "Xin chào Nguyễn Văn A"
+
+        // ===== NUMBER — Số =====
+        let soNguyen = 42;
+        let soThuc = 3.14;
+        let am = -10;
+        let voCuc = Infinity;
+
+        console.log(typeof soNguyen);   // "number"
+
+        // ===== BOOLEAN — Đúng/Sai =====
+        let laTrue = true;
+        let laFalse = false;
+
+        console.log(typeof laTrue);     // "boolean"
+
+        // ===== NULL & UNDEFINED =====
+        let giaTriNull = null;          // "không có gì" (cố tình)
+        let chuaGanGiaTri;              // undefined (chưa gán)
+
+        console.log(typeof giaTriNull);   // "object" (bug nổi tiếng của JS!)
+        console.log(typeof chuaGanGiaTri); // "undefined"
+
+        // ===== Kiểm tra kiểu =====
+        console.log("42 là:", typeof 42);          // number
+        console.log("'42' là:", typeof "42");      // string
+        console.log("true là:", typeof true);      // boolean
+
+        let TenMonHoc = "Nền tảng Web";
+        console.log(TenMonHoc);
+        let SoTinChi = 3;
+        console.log(SoTinChi);
+        let latrue = true;
+        console.log(latrue);
+        let diemso;
+        console.log(diemso);
+        
+        </script>
+</body>
+
+</html>

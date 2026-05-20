@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>hello</p>
+    <script>
+    // ===== LET — biến có thể thay đổi =====
+let ten = "Minh";
+let tuoi = 20;
+let laSinhVien = true;
+
+console.log("Tên:", ten);        // "Tên: Minh"
+console.log("Tuổi:", tuoi);      // "Tuổi: 20"
+console.log("Sinh viên:", laSinhVien); // "Sinh viên: true"
+
+// Thay đổi giá trị
+tuoi = 21;
+console.log("Tuổi mới:", tuoi);  // "Tuổi mới: 21"
+
+// ===== CONST — hằng số, KHÔNG thể thay đổi =====
+const PI = 3.14159;
+const TEN_TRUONG = "Đại học Thủy Lợi";
+
+console.log("PI =", PI);
+console.log("Trường:", TEN_TRUONG);
+
+// ❌ Thử thay đổi const sẽ bị lỗi:
+// PI = 3.14;  // TypeError: Assignment to constant variable
+
+// ===== VAR — cách cũ, ít dùng =====
+var monHoc = "CSE391";
+console.log("Môn:", monHoc);</script>
+</body>
+</html>
