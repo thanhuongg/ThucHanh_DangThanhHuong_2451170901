@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Basics</title>
+</head>
+<body>
+    <h1 id="title">Xin chào DOM!</h1>
+    <p class="description">Đây là đoạn văn đầu tiên</p>
+    <p class="description">Đây là đoạn văn thứ hai</p>
+    <ul id="danh-sach">
+        <li class="item">HTML</li>
+        <li class="item">CSS</li>
+        <li class="item">JavaScript</li>
+    </ul>
+
+    <script>
+        // ===== TẠO PHẦN TỬ MỚI =====
+        const newItem = document.createElement('li');
+        newItem.textContent = 'React';
+        newItem.classList.add('item');
+
+        // ===== THÊM VÀO DOM =====
+        const danhSach = document.getElementById('danh-sach');
+
+        // appendChild — thêm vào CUỐI
+        danhSach.appendChild(newItem);
+
+        // prepend — thêm vào ĐẦU
+        const firstNewItem = document.createElement('li');
+        firstNewItem.textContent = 'Git';
+        firstNewItem.classList.add('item');
+        danhSach.prepend(firstNewItem);
+
+        // insertBefore — thêm TRƯỚC phần tử cụ thể
+        const refItem = danhSach.children[2]; // Chèn trước item thứ 3
+        const midItem = document.createElement('li');
+        midItem.textContent = 'TypeScript';
+        midItem.classList.add('item');
+        danhSach.insertBefore(midItem, refItem);
+
+        // ===== XÓA PHẦN TỬ =====
+        danhSach.removeChild(danhSach.lastChild); // Xóa cuối
+
+        // Cách mới hơn:
+        newItem.remove(); // Tự xóa chính mình
+
+        // ===== THAY THẾ PHẦN TỬ =====
+        const oldItem = danhSach.children[0];
+        const replacement = document.createElement('li');
+        replacement.textContent = 'HTML5 (updated)';
+        replacement.classList.add('item');
+        danhSach.replaceChild(replacement, oldItem);
+
+        // ===== Bài tập con =====
+        // Tạo function themMonHoc(tenMon)
+        function themMonHoc(tenMon) {
+            // 1. Tạo <li> mới với class "item"
+            const newLi = document.createElement('li');
+            newLi.classList.add('item');
+            // 2. textContent = tenMon
+            newLi.textContent = tenMon;
+            // 3. Thêm vào cuối <ul id="danh-sach">
+            document.getElementById('danh-sach').appendChild(newLi);
+        }
+
+        // 4. Gọi thử
+        themMonHoc("Vue.js");
+        themMonHoc("Node.js");
+    </script>
+</body>
+</html>

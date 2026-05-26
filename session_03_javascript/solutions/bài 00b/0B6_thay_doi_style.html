@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Basics</title>
+</head>
+<body>
+    <h1 id="title">Xin chào DOM!</h1>
+    <p class="description">Đây là đoạn văn đầu tiên</p>
+    <p class="description">Đây là đoạn văn thứ hai</p>
+    <ul id="danh-sach">
+        <li class="item">HTML</li>
+        <li class="item">CSS</li>
+        <li class="item">JavaScript</li>
+    </ul>
+
+    <script>
+        const title = document.getElementById('title');
+
+        // ===== element.style.propertyName =====
+        title.style.color = 'blue';
+        title.style.fontSize = '2rem';
+        title.style.backgroundColor = '#f0f0f0';
+        title.style.padding = '1rem';
+        title.style.borderRadius = '8px';
+
+        // ===== Lấy style hiện tại =====
+        const currentColor = title.style.color;
+        console.log("Màu hiện tại:", currentColor); // "blue"
+
+        // ===== Reset style =====
+        title.style.color = '';  // Xóa inline style → quay về CSS mặc định
+
+        // ===== Bài tập con =====
+        // 1. Chọn tất cả li
+        const liItems = document.querySelectorAll('.item');
+
+        liItems.forEach((li, index) => {
+            // 2. Nếu index chẵn → màu nền xanh nhạt (#dbeafe)
+            if (index % 2 === 0) {
+                li.style.backgroundColor = '#dbeafe';
+            }
+            // 3. Nếu index lẻ → màu nền hồng nhạt (#fce7f3)
+            else {
+                li.style.backgroundColor = '#fce7f3';
+            }
+            // 4. Font size = (index + 1) * 14 px
+            li.style.fontSize = ((index + 1) * 14) + 'px';
+        });
+    </script>
+</body>
+</html>
