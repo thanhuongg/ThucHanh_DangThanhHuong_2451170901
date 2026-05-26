@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Basics</title>
+</head>
+<body>
+    <h1 id="title">Xin chào DOM!</h1>
+    <p class="description">Đây là đoạn văn đầu tiên</p>
+    <p class="description">Đây là đoạn văn thứ hai</p>
+    <ul id="danh-sach">
+        <li class="item">HTML</li>
+        <li class="item">CSS</li>
+        <li class="item">JavaScript</li>
+    </ul>
+
+    <script>
+        const title = document.getElementById('title');
+
+        // ===== getAttribute — lấy giá trị thuộc tính =====
+        console.log("ID:", title.getAttribute('id'));  // "title"
+        console.log("Class:", title.getAttribute('class')); // null (chưa có class)
+
+        // ===== setAttribute — thêm/sửa thuộc tính =====
+        title.setAttribute('class', 'main-title');
+        title.setAttribute('data-info', 'Thông tin tùy ý');
+
+        // ===== removeAttribute — xóa thuộc tính =====
+        title.removeAttribute('data-info');
+
+        // ===== Truy cập trực tiếp =====
+        console.log(title.id);        // "title"
+        console.log(title.className); // "main-title"
+
+        // ===== Bài tập con =====
+        // 1. Thêm class "highlight" cho tất cả li
+        document.querySelectorAll('.item').forEach(li => {
+            li.setAttribute('class', li.getAttribute('class') + ' highlight');
+        });
+
+        // 2. Thêm attribute "data-index" cho mỗi li (0, 1, 2)
+        document.querySelectorAll('.item').forEach((li, index) => {
+            li.setAttribute('data-index', index);
+        });
+
+        // 3. Đổi title của trang (document.title) thành "DOM Practice"
+        document.title = "DOM Practice";
+    </script>
+</body>
+</html>

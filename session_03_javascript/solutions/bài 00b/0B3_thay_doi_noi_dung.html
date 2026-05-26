@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Basics</title>
+</head>
+<body>
+    <h1 id="title">Xin chào DOM!</h1>
+    <p class="description">Đây là đoạn văn đầu tiên</p>
+    <p class="description">Đây là đoạn văn thứ hai</p>
+    <ul id="danh-sach">
+        <li class="item">HTML</li>
+        <li class="item">CSS</li>
+        <li class="item">JavaScript</li>
+    </ul>
+
+    <script>
+        const title = document.getElementById('title');
+
+        // ===== textContent — chỉ text thuần =====
+        title.textContent = "JavaScript thật tuyệt!";
+
+        // ===== innerHTML — có thể chứa HTML =====
+        title.innerHTML = "JavaScript <em>thật tuyệt</em>!";
+
+        // ===== Phân biệt textContent vs innerHTML =====
+        const desc = document.querySelector('.description');
+
+        desc.textContent = "<b>In đậm</b>";
+        // Hiển thị: <b>In đậm</b> (hiển thị nguyên text, KHÔNG render HTML)
+
+        desc.innerHTML = "<b>In đậm</b>";
+        // Hiển thị: In đậm (render thành HTML)
+
+        // ===== Bài tập con =====
+        // 1. Đổi title thành tên của bạn
+        document.getElementById('title').textContent = "Nguyễn Văn An";
+
+        // 2. Đổi p đầu tiên thành "Tôi đang học DOM"
+        document.querySelector('.description').textContent = "Tôi đang học DOM";
+
+        // 3. Đổi nội dung li đầu tiên thành "<strong>HTML5</strong>"
+        document.querySelector('#danh-sach li').innerHTML = "<strong>HTML5</strong>";
+
+        // 4. Dùng querySelectorAll + forEach: thêm "(đã học)" vào cuối mỗi li
+        document.querySelectorAll('.item').forEach(li => {
+            li.textContent = li.textContent + " (đã học)";
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Basics</title>
+    <style>
+        .highlight {
+            background-color: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 0.5rem;
+        }
+        .bold { font-weight: bold; }
+        .text-red { color: #ef4444; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <h1 id="title">Xin chào DOM!</h1>
+    <p class="description">Đây là đoạn văn đầu tiên</p>
+    <p class="description">Đây là đoạn văn thứ hai</p>
+    <ul id="danh-sach">
+        <li class="item">HTML</li>
+        <li class="item">CSS</li>
+        <li class="item">JavaScript</li>
+    </ul>
+
+    <script>
+        const title = document.getElementById('title');
+
+        // ===== add — thêm class =====
+        title.classList.add('highlight');
+        console.log(title.className); // "main-title highlight"
+
+        // ===== remove — xóa class =====
+        title.classList.remove('highlight');
+
+        // ===== toggle — bật/tắt class =====
+        title.classList.toggle('highlight');  // Thêm nếu chưa có, xóa nếu đã có
+        title.classList.toggle('highlight');  // Xóa (vì đang có)
+
+        // ===== contains — kiểm tra có class không =====
+        console.log(title.classList.contains('highlight')); // false
+
+        // ===== replace — thay thế class =====
+        title.classList.replace('main-title', 'sub-title');
+
+        // ===== Thêm nhiều class cùng lúc =====
+        title.classList.add('bold', 'text-red');
+
+        // ===== Bài tập con =====
+        // 1. Thêm class "highlight" cho tất cả li
+        document.querySelectorAll('.item').forEach(li => {
+            li.classList.add('highlight');
+        });
+
+        // 2. Kiểm tra li đầu tiên có class "highlight" không
+        const firstLi = document.querySelector('.item');
+        console.log("Li đầu tiên có class highlight:", firstLi.classList.contains('highlight'));
+
+        // 3. Toggle class "text-red" cho li thứ hai
+        document.querySelectorAll('.item')[1].classList.toggle('text-red');
+
+        // 4. Xóa class "highlight" khỏi tất cả li (dùng forEach)
+        document.querySelectorAll('.item').forEach(li => {
+            li.classList.remove('highlight');
+        });
+    </script>
+</body>
+</html>
