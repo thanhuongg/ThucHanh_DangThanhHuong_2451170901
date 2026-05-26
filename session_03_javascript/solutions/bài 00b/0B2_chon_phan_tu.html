@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Basics</title>
+</head>
+<body>
+    <h1 id="title">Xin chào DOM!</h1>
+    <p class="description">Đây là đoạn văn đầu tiên</p>
+    <p class="description">Đây là đoạn văn thứ hai</p>
+    <ul id="danh-sach">
+        <li class="item">HTML</li>
+        <li class="item">CSS</li>
+        <li class="item">JavaScript</li>
+    </ul>
+
+    <script>
+        // ===== CÁCH 1: getElementById — chọn theo ID (1 phần tử) =====
+        const title = document.getElementById('title');
+        console.log("getElementById:", title);
+        console.log("Nội dung:", title.textContent);
+
+        // ===== CÁCH 2: querySelector — chọn phần tử ĐẦU TIÊN khớp =====
+        const firstDesc = document.querySelector('.description');
+        console.log("querySelector:", firstDesc.textContent);
+
+        const firstItem = document.querySelector('#danh-sach li');
+        console.log("Selector phức tạp:", firstItem.textContent); // "HTML"
+
+        // ===== CÁCH 3: querySelectorAll — chọn TẤT CẢ phần tử khớp =====
+        const allItems = document.querySelectorAll('.item');
+        console.log("querySelectorAll:", allItems);      // NodeList(3)
+        console.log("Số phần tử:", allItems.length);     // 3
+
+        // Duyệt qua tất cả
+        allItems.forEach((item, index) => {
+            console.log(`Item ${index}: ${item.textContent}`);
+        });
+
+        // ===== Bài tập con =====
+        // 1. Chọn h1 bằng getElementById
+        const h1 = document.getElementById('title');
+        console.log("getElementById h1:", h1);
+
+        // 2. Chọn p đầu tiên bằng querySelector
+        const firstP = document.querySelector('p');
+        console.log("querySelector p đầu tiên:", firstP);
+
+        // 3. Chọn tất cả li bằng querySelectorAll
+        const allLi = document.querySelectorAll('li');
+        console.log("querySelectorAll li:", allLi);
+
+        // 4. In ra nội dung của từng phần tử
+        console.log("Nội dung h1:", h1.textContent);
+        console.log("Nội dung p đầu tiên:", firstP.textContent);
+        allLi.forEach((li, index) => {
+            console.log(`Nội dung li[${index}]:`, li.textContent);
+        });
+    </script>
+</body>
+</html>
